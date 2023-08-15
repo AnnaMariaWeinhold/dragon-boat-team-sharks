@@ -1,0 +1,180 @@
+---
+
+---
+<header>
+    <input type="checkbox" id="navbar__checkbox" class="navbar__checkbox"/>
+    <label for="navbar__checkbox" class="navbar__toggle">
+        <span></span>
+    </label>
+   
+    <div class="logo__container">
+        <a href="/"><img class="logo" src="/images/logo.png" alt="" width="120"></a>
+    </div>
+<nav class="navbar">
+        <ul class="navbar__ul">
+            <li class="navbar__li"><a class="navbar__a" href="/zumba-online">Training</a></li>
+            <li class="navbar__li"><a class="navbar__a" href="/events">Events</a></li>
+            <li class="navbar__li"><a class="navbar__a" href="/shop">Shop</a></li>
+            <li class="navbar__li"><a class="navbar__a" href="/about-sharks">About</a></li>
+            <li class="navbar__li"><a class="navbar__a" href="/zumba-im-studio">Contact</a></li>
+            <li class="navbar__li"><a class="navbar__a  navbar__btn" href="">Join us</a></li>
+        </ul>
+</nav>
+
+</header>
+
+<style>
+header {
+background: transparent;
+position: sticky;
+width: 100%;
+z-index: 3;
+padding: 1em;
+}
+
+.logo {
+    max-width: 60%;
+}
+
+.logo__container {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+
+.navbar {
+position: absolute;
+top: 10%;
+width: 100%;
+z-index: 3;
+position: fixed;
+text-align: right;
+display: none;
+background-color: #fff;
+opacity: 0.96;
+}
+
+.navbar__ul {
+list-style: none;
+}
+
+.navbar__li {
+font-size: var(--fs-300);
+font-weight: 700;
+font-family: var(--ff-body);
+padding: 0.6em 0.4em;
+margin-bottom: 1em;
+}
+
+.navbar__a {
+text-decoration: none;
+color: var(--black-color);
+padding: 20px 40px; 
+}
+
+.navbar__btn {
+    background-color: var(--first-color);
+    border: 1px solid var(--first-color);
+    border-radius: var(--border-radius);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: var(--fs-xs);
+}
+
+.navbar__btn:hover {
+    background-color: #fff;
+    border: 1px solid var(--first-color);
+}
+
+.navbar__a:hover {
+color: var(--first-color);
+}
+
+.navbar__checkbox {
+display: none;
+}
+
+.navbar__checkbox:checked ~ nav {
+display: block;
+}
+
+.navbar__toggle {
+position: absolute;
+top: 0;
+right: 0;
+height: 100%;
+margin-right: 1em;
+display: flex;
+align-items: center;
+}
+
+.navbar__toggle span,
+.navbar__toggle span::before,
+.navbar__toggle span::after {
+display: block;
+background-color: var(--black-color);
+width: 2em;
+height: 2px;
+border-radius: 2px;
+position: relative;
+}
+
+.navbar__toggle span::before,
+.navbar__toggle span::after {
+content: "";
+position: absolute;
+}
+
+.navbar__toggle span::before {
+bottom: 8px;
+}
+
+.navbar__toggle span::after {
+top: 8px;
+}
+
+.navbar--active {
+color: var(--first-color);
+}
+
+@media only screen and (min-width: 80em) {
+
+header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 10fr) 1fr;
+    padding: 12px;
+}
+
+.logo {
+    max-width: 100%;
+}
+
+.logo__container {
+justify-content: center;
+margin-left: 2rem;
+}
+
+.navbar {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 3 /4;
+}
+
+.navbar__ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__li {
+    margin-bottom: 0;
+}
+
+.navbar__toggle {
+    display: none;
+}
+}
+
+</style>

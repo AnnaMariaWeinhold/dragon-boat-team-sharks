@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* #VARIABLES */
+
+:root {
+    --first-color: #1F1B3C;
+    --second-color: #FF6659;
+    --third-color: #E72C83;
+    --fourth-color: #47378D;
+
+    --ff-heading: 'GothamBlack', Arial, Helvetica;
+}
+
+/* #FONTS*/
+
+@font-face {
+    font-family: 'GothamBlack';
+    src: url(/fonts/GothamBlackRegular.ttf);
+}
+
+/* #BODY */
+
+body {
+    background-color: var(--first-color);
+}
+
+/* #MAINLAYOUT */
+
+.main-layout__grid {
+    display: grid;
+    min-height: 100dvh;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
+}
+
+.header {
+    grid-area: header;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
