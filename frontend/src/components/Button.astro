@@ -1,0 +1,49 @@
+---
+const { btn, alignClass } = Astro.props;
+---
+
+<div class={`
+btn__container
+${alignClass}
+`}>
+    { btn &&
+    (<a class="btn" href={ btn.href }>{ btn.text }</a> 
+    ) 
+    }
+</div>    
+
+<style>
+    .btn__container {
+        background: linear-gradient(to right, var(--second-color), var(--third-color));
+        display: flex;
+        margin: 2em 0;
+        justify-content: center;
+        max-width: 12em;   
+    }
+
+    .btn {
+        padding: 1em;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 300;
+        transition: 0.7s;
+    }
+
+    .btn__container:hover {
+        background: var(--third-color);
+    }
+
+    .align--right {
+        margin-left: auto;
+      
+    }
+
+    .align--left {
+        margin-right: auto;
+    }
+
+    .align--center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>

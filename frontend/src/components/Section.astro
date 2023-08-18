@@ -1,0 +1,82 @@
+---
+const { heading = "", backgroundImgClass = "", paddingClass = "" } = Astro.props;
+---
+<div class={`
+    background-img
+    ${backgroundImgClass}
+    ${paddingClass}
+    `}>
+<section class="section">
+    <h2 class="section__heading">{ heading }</h2>
+    <slot/>
+</section>
+</div>
+<style>
+    .section {
+        margin: 3.6em auto;
+    }
+
+    .section__padding {
+        padding: 2em;
+        margin: -5.6em auto;
+    }
+
+    .section__heading {
+        text-align: left;
+        max-width: 80%;
+        margin: 0 auto 1em auto;
+    }
+
+    .background-img {
+        background-repeat: no-repeat;
+    }
+
+    .background-img__scales {
+        background-image: url(/images/scales.svg);
+        background-size: cover;
+        background-position: center;
+        padding: 4em 0 0 0;
+    }
+
+    .background-img__map {
+        background-image: url(/images/map-cut.svg);
+        background-position: top right;
+        background-size: 90%;
+    }
+
+    .background-img__couple {
+        background-image: url(/images/love-couple.svg);
+        background-position: bottom right;
+        background-size: 50%;
+        background-repeat: no-repeat;
+    }
+
+    @media only screen and (min-width: 40em) {
+        .section {
+        margin: 5.6em auto;
+    }
+    
+    .section__heading {
+        margin-left: 2.8em;
+        max-width: 50%;
+    }
+
+    .section__padding {
+        padding: 5.6em;
+    }
+
+        .background-img__couple {
+            background-size: 40%;
+        }
+
+        .background-img__map {
+        background-position: top right;
+        background-size: 48%;
+    }
+
+    .background-img__scales {
+        padding: 5em 0;
+    }
+
+    }
+</style>

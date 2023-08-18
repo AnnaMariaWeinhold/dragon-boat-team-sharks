@@ -1,0 +1,53 @@
+---
+const { date, event, location, eventImgClass } = Astro.props;
+---
+
+<div class={`
+event__background-img
+${eventImgClass}`}>
+    <h3 class="event__date">{ date }</h3>
+    <p class="event">{ event }</p>
+    <p>{ location }</p>
+</div>
+
+
+<style>
+.background-img__party {
+    background-image: url(/images/6.jpg);
+    padding: 1.8em 1.2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-img__charity {
+    background-image: url(/images/4.jpg);
+    padding: 1.8em 1.2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-img__international {
+    background-image: url(/images/7.jpg);
+    padding: 1.8em 1.2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-img__corporate {
+    background-image: url(/images/15.jpg);
+    padding: 1.8em 1.2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-img__fun-race {
+    background-image: url(/images/18.jpg);
+    padding: 1.8em 1.2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.event {
+    font-size: var(--fs-400);
+}
+</style>

@@ -8,16 +8,14 @@
     </label>
    
     <div class="logo__container">
-        <a href="/"><img class="logo" src="/images/logo.png" alt="" width="120"></a>
+        <a href="/"><img class="logo" src="/images/logo.png" alt="" width="60"></a>
     </div>
 <nav class="navbar">
         <ul class="navbar__ul">
-            <li class="navbar__li"><a class="navbar__a" href="/zumba-online">Training</a></li>
-            <li class="navbar__li"><a class="navbar__a" href="/events">Events</a></li>
+            <li class="navbar__li"><a class="navbar__a" href="/training">Training</a></li>
             <li class="navbar__li"><a class="navbar__a" href="/shop">Shop</a></li>
-            <li class="navbar__li"><a class="navbar__a" href="/about-sharks">About</a></li>
-            <li class="navbar__li"><a class="navbar__a" href="/zumba-im-studio">Contact</a></li>
-            <li class="navbar__li"><a class="navbar__a  navbar__btn" href="">Join us</a></li>
+            <li class="navbar__li"><a class="navbar__a" href="/about">About</a></li>
+            <li class="navbar__li"><a class="navbar__a" href="/contact">Contact</a></li>
         </ul>
 </nav>
 
@@ -25,15 +23,16 @@
 
 <style>
 header {
-background: transparent;
+background: var(--first-color);
 position: sticky;
 width: 100%;
 z-index: 3;
-padding: 1em;
+padding: 1em 1em 1em 0;
 }
 
 .logo {
     max-width: 60%;
+    margin-left: 1em;
 }
 
 .logo__container {
@@ -50,8 +49,7 @@ z-index: 3;
 position: fixed;
 text-align: right;
 display: none;
-background-color: #fff;
-opacity: 0.96;
+background-color: var(--first-color);
 }
 
 .navbar__ul {
@@ -61,14 +59,16 @@ list-style: none;
 .navbar__li {
 font-size: var(--fs-300);
 font-weight: 700;
-font-family: var(--ff-body);
+font-family: var(--ff-text);
 padding: 0.6em 0.4em;
 margin-bottom: 1em;
 }
 
 .navbar__a {
 text-decoration: none;
-color: var(--black-color);
+background-image: linear-gradient(to right, var(--second-color), var(--third-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 padding: 20px 40px; 
 }
 
@@ -87,7 +87,7 @@ padding: 20px 40px;
 }
 
 .navbar__a:hover {
-color: var(--first-color);
+color: #fff;
 }
 
 .navbar__checkbox {
@@ -112,7 +112,7 @@ align-items: center;
 .navbar__toggle span::before,
 .navbar__toggle span::after {
 display: block;
-background-color: var(--black-color);
+background-color: #fff;
 width: 2em;
 height: 2px;
 border-radius: 2px;

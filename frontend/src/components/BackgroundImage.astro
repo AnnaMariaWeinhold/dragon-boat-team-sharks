@@ -1,0 +1,30 @@
+---
+const { backgroundImgClass } = Astro.props;
+---
+
+<div class={`
+background-img
+${backgroundImgClass}
+`}></div>
+
+<style>
+    .background-img {
+        background-repeat: no-repeat;
+    }
+
+    .background-img__map {
+        background-image: url(/images/map.svg);
+        background-position: right;
+        background-size: 74%;
+        padding: 0 0 70em 0;
+        margin-top: -68em;
+        margin-right: -50em;
+    }
+
+    @media only screen and (min-width: 40em) {
+        .background-img__couple {
+        background-size: 100%;
+    }
+    }
+    
+</style>

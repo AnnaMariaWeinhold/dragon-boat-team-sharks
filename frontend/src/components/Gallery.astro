@@ -1,0 +1,36 @@
+---
+const { img, sizeClass } = Astro.props;
+---
+
+<div class={`
+    gallery__grid
+    ${sizeClass}
+    `}>
+    {img && (
+    <img  alt={ img.alt } src={ img.src }
+    />
+    )}
+</div>
+
+<style>
+    .gallery__grid {
+        display: grid;
+    }
+   
+
+    @media only screen and (min-width: 60em) {
+
+        .medium {
+            grid-column: span 2;
+        }
+
+        .large {
+            grid-column: span 3;
+        }
+
+        .square {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+    }
+</style>

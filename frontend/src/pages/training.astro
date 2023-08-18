@@ -1,0 +1,31 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroShot from "../components/HeroShot.astro";
+import Table from "../components/Table.astro";
+import Section from "../components/Section.astro";
+import Wrapper from "../components/Wrapper.astro";
+---
+
+<MainLayout
+title="Trainings of Sharks"
+description="">
+<HeroShot 
+img={{
+	src:'/images/training.webp',
+	alt:''
+}}
+heading="We train all year long"
+text="We train in Paphos and Limassol. Depending on the weather we paddle on the dam or the sea."
+btn={{
+	href:'/contact',
+	text:'Contact us'
+}}
+alignClass="heroshot__align--center"
+/>
+<Section
+heading="Our training schedule">
+    <Wrapper>
+<Table />
+</Wrapper>
+</Section>
+</MainLayout>

@@ -1,0 +1,180 @@
+---
+import HeroShot from "../components/HeroShot.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Gallery from "../components/Gallery.astro";
+import Section from "../components/Section.astro";
+import Wrapper from "../components/Wrapper.astro";
+import Grid from "../components/Grid.astro";
+---
+
+<MainLayout
+title="About Cyprus Sharks"
+description=""
+>
+<HeroShot
+img={{
+	src:'/images/team-work.webp',
+	alt:''
+}}
+heading="We are passionate and stick together. Sharks love forever."
+text="Get to know us better. Come to our training sessions and live your best life."
+alignClass="heroshot__align--center"
+/>
+<Section>
+    <Wrapper>
+<p>Dragon Boat Team sharks was found....</p>
+<Grid
+gridColumnClass="grid-5fr">
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/simo-explain.webp',
+}}
+/>
+<Gallery
+sizeClass="small"
+img={{
+    src:'/images/simo-race-prep.webp',
+}}
+/>
+<Gallery
+sizeClass="small"
+img={{
+    src:'/images/simo-bbq.webp'
+}}
+/>
+<Gallery
+sizeClass="small"
+img={{
+    src:'/images/simo-watermelon.webp'
+}}
+/>
+
+</Grid>
+</Wrapper>
+</Section>
+
+<Section>
+    <Wrapper>
+<p>We are a community...</p>
+<Grid
+gridColumnClass="grid-5fr">
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/nicole.webp',
+}}
+/>
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/birthday.webp',
+}}
+/>
+<Gallery
+sizeClass="small"
+img={{
+    src:'/images/giannis-grant.webp'
+}}
+/>
+<Gallery
+sizeClass="small"
+img={{
+    src:'/images/team-cheering.webp'
+}}
+/>
+<Gallery
+sizeClass="small"
+img={{
+    src:'/images/sharks-women.webp'
+}}
+/>
+<Gallery
+sizeClass="large"
+img={{
+    src:'/images/stella-tina.webp'
+}}
+/>
+
+
+</Grid>
+</Wrapper>
+</Section>
+
+<Section>
+    <Wrapper>
+<p>We participate in national and international competitions. We train, have fun...</p>
+<Grid
+gridColumnClass="grid-6fr">
+
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/waiting.webp',
+}}
+/>
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/on-the-way.webp'
+}}
+/>
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/men-boat.webp'
+}}
+/>
+<Gallery
+sizeClass="large"
+img={{
+    src:'/images/on-the-way-women.webp',
+}}
+/>
+<Gallery
+sizeClass="large"
+img={{
+    src:'/images/chill-boat.webp'
+}}
+/>
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/helm.webp',
+}}
+/>
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/race-women.webp'
+}}
+/>
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/boat.webp'
+}}
+/>
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/warming-up.webp',
+}}
+/>
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/women-training.webp',
+}}
+/>
+<Gallery
+sizeClass="medium"
+img={{
+    src:'/images/stella-training.webp',
+}}
+/>
+</Grid>
+</Wrapper>
+</Section>
+
+</MainLayout>

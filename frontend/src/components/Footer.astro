@@ -1,0 +1,108 @@
+---
+const { linkedIn, facebook, instagram } = Astro.props;
+---
+
+<footer class="footer">
+<div class="footer__container">
+    <img class="footer__logo" src="/images/logo.png" alt="Logo of Dragon Boat Team Sharks Cyprus">
+    <h3 class="footer__slogan">Smile like a shark</h3>
+        <div class="footer__link-container">
+            <a class="footer__link" href="/impressum">Impressum</a>
+            <a class="footer__link" href="/privacy-policy">Privacy policy</a>
+            <a class="footer__link" href="/contact">Contact</a>
+        </div>
+        <div>
+            <p class="footer__creator">Design and Website made by <br><a href="https://www.seomotions.com">seomotions</a></p>
+        </div>
+        <div class="footer__share">
+            <a href={linkedIn} target="_blank"><i class="icofont-linkedin  icofont-2x  share-btn"></i></a>
+            <a href={facebook} target="_blank"><i class="icofont-facebook  icofont-2x   share-btn"></i></a>
+        </div>
+<div>
+
+</div>
+</div>
+</footer>
+
+<style>
+    /* LINK */
+
+    .footer__link {
+        color: #fff;
+        display: flex;
+        align-self: center;
+        text-align: center;
+        border-bottom: 2px solid var(--third-color);
+        border-radius: 2px;
+        padding-bottom: 2px; 
+        font-size: var(--fs-xs);
+        font-family: var(--ff-text);
+    }
+
+    .footer__creator {
+        text-align: center;
+        font-size: var(--fs-xs);
+        margin-top: 4em;
+    }
+
+    .footer__link:hover {
+        border-bottom: 2px solid #fff;
+        border-radius: 2px;
+        padding-bottom: 2px;  
+    }
+
+    .footer__link-container {
+        display: flex;
+        gap: 2em;
+        justify-content: center;
+    }
+
+    .footer__container {
+        background-color: var(--third-color);
+        margin-top: 60px;
+        padding: 2em;
+        display: grid;
+        gap: 2em;
+    }
+
+    .footer__logo {
+        width: 50%;
+        display: flex;
+        justify-self: center;
+    }
+
+    .footer__slogan {
+        color: #fff;
+        text-align: center;
+        margin-top: -24px;
+    }
+
+    .footer__share {
+        display: flex;
+        justify-content: center;
+    }
+
+    .share-btn {
+        color: #fff;
+        padding: 12px;
+    }
+
+    .share-btn:hover {
+        color: var(--hover-color);
+    }
+
+    @media only screen and (min-width: 40em) {
+        .footer__logo {
+        width: 30%;
+        }
+        .footer__link {
+            font-size: var(--fs-300);
+        }
+    }
+
+    @media only screen and (min-width: 60em) {
+        .footer__logo {
+        width: 14%;
+        }
+    }
+</style>

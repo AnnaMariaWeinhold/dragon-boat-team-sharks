@@ -1,0 +1,59 @@
+---
+
+---
+
+<div class="img__grid">
+    <div class="img__grid--first-item">
+        <img class="img__item" src="/images/giannis.webp" />
+        <p>Giannis</p>
+    </div>
+    <div class="img__grid--second-item">
+        <img class="img__item" src="/images/sharen.webp" />
+        <p>Sharen</p>
+    </div>
+    <div class="img__grid--third-item">
+        <img class="img__item" src="/images/grant.webp" />
+        <p>Grant</p>
+    </div>
+    <div class="img__grid--fourth-item">
+        <img class="img__item" src="/images/simo.webp" />
+        <p>Simo</p>
+    </div>
+</div>
+
+<style>
+    .img__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2em;
+        padding: 2em;
+    }
+
+    .img__item {
+        margin-bottom: 0.6em;
+        
+    }
+
+   
+
+    @media only screen and (min-width: 40em) {
+        .img__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .img__grid--first-item {
+        margin-top: 4em;
+    }
+
+    .img__grid--third-item {
+        margin-top: -4em;
+    }
+
+    
+    .img__grid--fourth-item {
+        margin-top: -6em;
+    }
+
+    }
+
+</style>

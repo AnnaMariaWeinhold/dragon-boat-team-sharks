@@ -1,0 +1,29 @@
+---
+const { listItems } = Astro.props;
+
+interface Props {
+        listItems: string[];
+      }
+---
+
+<ul class="list">
+    {
+        listItems.map((item) => (
+          <li class="list__item"><i class="icofont-check-circled  icofont-2x  list__icon"></i>
+            {item}
+          </li>
+        ))
+      }
+</ul>
+
+<style>
+    .list {
+        list-style: none;
+        color: #fff;
+    }
+
+    .list__item {
+        padding: 0.2em;
+        font-size: var(--fs-300);
+    }
+</style>

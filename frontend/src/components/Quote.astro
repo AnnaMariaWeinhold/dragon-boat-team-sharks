@@ -1,0 +1,32 @@
+---
+const { quote } = Astro.props;
+---
+
+    <div class="quote__background-img">
+    <blockquote class="quote">
+        { quote }
+    </blockquote>
+</div>
+
+<style>
+  
+.quote__background-img {
+    background-image: url(/images/quotation-marks.svg);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 60%;
+    padding: 12em 0;
+}
+
+.quote {
+    font-size: var(--fs-600);
+    color: #fff;
+}
+
+@media only screen and (min-width: 40em) {
+      
+.quote__background-img {
+    background-size: 70%;
+}
+}
+</style>

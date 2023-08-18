@@ -1,0 +1,33 @@
+---
+const { img, title, price } = Astro.props;
+---
+
+<div class="product__container">
+    { img &&
+    (<img src={img.src} alt={img.alt} width={img.width} />)}
+    <h3 class="product__heading">{ title }</h3>
+    <p class="product__price">{ price }</p>
+
+</div>
+
+<style>
+    .product__container {
+    padding: 25px 2.6em;
+    background-color: #fff;
+   
+  }
+
+  .product__heading {
+    margin-top: 20px;
+    color: var(--first-color);
+  }
+
+  .product__price {
+    color: var(--first-color);
+  }
+
+  .arrow {
+    margin-right: 4px;
+  }
+  
+  </style>

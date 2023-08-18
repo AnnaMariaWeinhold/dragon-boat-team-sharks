@@ -1,0 +1,118 @@
+---
+const { img = "", heading, btn = "" } = Astro.props;
+---
+
+<div class="stack__container">
+    <div class="stack__img-container">
+    { img &&
+    (
+        <img class="stack__img" src={ img.src } alt={ img.alt } />
+    )
+    }
+    </div>
+    <div class="stack__text-container">
+        <h2 class="stack__heading">{ heading }</h2>
+    <div class="stack__btn-container">
+        { btn &&
+        (<a class="stack__btn" href={ btn.href }>{ btn.text }</a> 
+        ) 
+        }
+    </div>    
+</div>
+</div>
+
+
+
+<style>
+
+    .stack__container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .stack__img-container {
+        margin-bottom: 2em;
+    }
+
+    .stack__text-container {
+        padding: 0 2em;
+        max-width: 75em;
+        text-align: center;
+    }
+
+    .stack__heading {
+        margin-bottom: 1em;
+        color: #fff;
+    }
+
+    .stack__btn-container {
+        background: linear-gradient(to right, var(--second-color), var(--third-color));
+        padding: 1em;
+        max-width: 16em;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .stack__btn {
+        padding: 16px 18px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 400;
+        transition: 0.7s;
+    }
+
+    .stack__btn-container:hover {
+        padding: 1em;
+        background: var(--third-color);
+    }
+
+
+
+  @media only screen and (min-width: 50em) {
+   
+    .stack__img-container {
+    display: grid;
+    grid-template-areas: "stack";
+    place-items: left;
+    }
+
+    .stack__container > * {
+        grid-area: stack;
+    }
+
+    .stack__text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1%;
+        padding: 0 5.6em;
+        text-align: left;
+    }
+
+    .stack__btn-container {
+        margin: 0;
+    }
+
+    .stack__btn {
+        margin-bottom: auto;
+    }
+
+    .stack__heading {
+        margin-bottom: 1em;
+        max-width: 80%;
+    }
+}
+
+    @media only screen and (min-width: 60em) {
+        .stack__text-container {
+            margin-top: 2%;
+    }
+    }
+
+    @media only screen and (min-width: 80em) {
+        .stack__text-container {
+            margin-top: 8%;
+    }
+    }
+
+</style>

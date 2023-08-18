@@ -1,0 +1,106 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroShot from "../components/HeroShot.astro";
+import Section from "../components/Section.astro";
+import Wrapper from "../components/Wrapper.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Grid from "../components/Grid.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout
+title="Shop"
+description="">
+<HeroShot 
+img={{
+	src:'/images/models.webp',
+	alt:''
+}}
+heading="Our online shop is coming soon"
+text="We are working hard on it. Promise. See our products below. If you wish to order, contact us please."
+btn={{
+	href:'/contact',
+	text:'Contact us'
+}}
+alignClass="heroshot__align--left"
+/>
+<Section>
+	<Wrapper>
+		<Grid
+		gridColumnClass="grid-3fr">
+		<ProductCard 
+		img={{
+			src:'/images/shirt-blue.jpeg',
+			alt:'Blue Shirt from Dragon Boat Team Sharks'
+		}}
+		title="Blue Shirt"
+		price="25€"
+		/>
+		<ProductCard 
+		img={{
+			src:'/images/shirt-pink.jpeg',
+			alt:''
+		}}
+		title="Pink Shirt"
+		price="28€"
+		/>
+		<ProductCard 
+		img={{
+			src:'/images/hoody-blue.jpeg',
+			alt:'Blue Hoody from Dragon Boat Team Sharks'
+		}}
+		title="Blue Hoody"
+		price="35€"
+		/>
+        <ProductCard 
+		img={{
+			src:'/images/hoody-purple.jpeg',
+			alt:''
+		}}
+		title="Purple Hoody"
+		price="28€"
+		/>
+		<ProductCard 
+		img={{
+			src:'/images/leggings-purple.jpeg',
+			alt:''
+		}}
+		title="Purple Leggings"
+		price="35€"
+		/>
+        <ProductCard 
+		img={{
+			src:'/images/short-purple.jpeg',
+			alt:''
+		}}
+		title="Purple Shorts"
+		price="28€"
+		/>
+		<ProductCard 
+		img={{
+			src:'/images/shorts-blue.jpeg',
+			alt:''
+		}}
+		title="Blue Shorts"
+		price="35€"
+		/>
+        <ProductCard 
+		img={{
+			src:'/images/west-blue.jpeg',
+			alt:''
+		}}
+		title="Blue West"
+		price="35€"
+		/>
+		</Grid>
+		<Button 
+		btn={{
+			href:'/contact',
+			text:'Contact us'
+		}}
+		alignClass="align--center"
+		/>
+	</Wrapper>
+	</Section>
+
+</MainLayout>

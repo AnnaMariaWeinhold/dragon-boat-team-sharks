@@ -1,0 +1,71 @@
+---
+const { gridColumnClass, gridGapClass = "", gridAreaClass = "" } = Astro.props;
+---
+
+<div class={`
+grid
+${gridColumnClass}
+${gridGapClass}
+${gridAreaClass}
+`}>
+    <slot/>
+</div>
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3.8em;
+        margin-top: 2em;
+    }
+
+    .grid-2fr,
+    .grid-3fr,
+    .grid-4fr,
+    .grid-5fr,
+    .grid-6fr {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .grid__gap--smaller {
+        gap: 1.2em;
+    }
+
+    @media only screen and (min-width: 40em) {
+        .grid-2fr {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media only screen and (min-width: 60em) {
+        .grid-3fr {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media only screen and (min-width: 80em) {
+        .grid-4fr {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .grid-5fr {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .grid-6fr {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .grid-8fr {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+
+    .grid__text {
+        list-style: none;
+    }
+
+    .grid__p {
+        padding: 4em 0;
+    }
+</style>
