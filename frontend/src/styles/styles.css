@@ -7,13 +7,17 @@
 /* #VARIABLES */
 
 :root {
-    --first-color: #1F1B3C;
+    --first-color: #2e0071;
     --second-color: #FF6659;
-    --third-color: #E72C83;
-    --fourth-color: #47378D;
+    --third-color: #f90d8d;
+    --fourth-color: #7b57c4;
+    --fifth-color: #00a6e2;
+    --sixth-color: #0074c7;
+    --light-color: #fff;
 
     --ff-heading: 'GothamBlack', Arial, Helvetica, sans-serif;
-    --ff-text: 'maple-web', sans-serif;
+    --ff-text: 'proxima-nova', sans-serif;
+    --ff-accent: 'marker-aid', sans-serif;
     --fs-xl: 4.4rem;
     --fs-700: 3.2rem;
     --fs-600: 2.4rem;
@@ -35,7 +39,7 @@
 
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5 {
     font-family: var(--ff-heading);
 }
 
@@ -47,12 +51,35 @@ h2 {
     font-size: var(--fs-600);
     color: #fff;
     margin-bottom: 1em;
+    max-width: 60%;
 }
 
 h3 {
     font-size: var(--fs-600);
     color: #fff;
     margin-bottom: 0.4em;
+}
+
+h6 {
+    font-family: var(--ff-accent);
+    font-size: 1.3em;
+    color: var(--light-color);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding: 0 0.1em;
+}
+
+h6::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.8em;
+    width: 100%;
+    background: linear-gradient(45deg, var(--third-color), var(--first-color));
+    z-index: -1;
+    transition: height .30s cubic-bezier(0.6, 0, .4, 1);
 }
 
 p {
@@ -128,6 +155,10 @@ a {
 .span-2 {
     grid-column: span 2;
     grid-column: 1 / 3;
+}
+
+.span-3 {
+    grid-column: 1 / 4;
 }
 
 .start-row-2,

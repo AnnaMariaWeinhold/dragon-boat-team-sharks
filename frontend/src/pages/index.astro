@@ -33,16 +33,17 @@ btn={{
 alignClass="heroshot__align--center"
 />
 	<Section
-	paddingClass="section__padding"
-	backgroundImgClass="background-img__couple">
+	paddingClass="section__padding">
 	<Wrapper>
 	<Grid
 	gridColumnClass="grid-2fr">
 <Quote 
-quote="You are the reason why I get up in the morning. Just kidding. I have dragon boating."/>
+quote="We are the dragon boat team in Cyprus, you want to be part of. Smile like a shark or swim home."/>
+<!-- 
 <BackgroundImage 
 backgroundImgClass="background-img__couple"
 />
+-->
 </Grid>
 </Wrapper>
 </Section>
@@ -59,10 +60,12 @@ img={{
 backgroundImgClass="background-img__map"
 paddingClass="section__padding">
 <Wrapper>
+	<h6>Don't waste your time</h6>
+<h2>Join our training sessions</h2>
 <Grid
 gridColumnClass="grid-5fr"
 >
-<h2 class="span-2">Your love story begins here</h2>
+
 <div class="start-row-2  start-col-1">
 	<h3>Paphos</h3>
 	<Lists 
@@ -87,7 +90,7 @@ gridColumnClass="grid-5fr"
 	<Button 
 	btn={{
 		href:'',
-		text:'Join our training'
+		text:'Get in touch'
 	}}
 	alignClass="align--left"
 	/>
@@ -129,7 +132,7 @@ alignClass="align--center"
 
 <Section>
 	<Stack 
-	heading="We are waiting for you. Join our open sessions every Saturday 3:30pm in Paphos."
+	heading="We are waiting for you. If you don't try, you won't know."
 	img={{
 		src:'/images/team.webp',
 		alt:'Team picture of the dragon boat team sharks'
@@ -180,6 +183,25 @@ heading="Become a real shark">
 		/>
 	</Wrapper>
 	</Section>
+
+	<Section
+	heading="Upcoming events"
+	headingMarginClass="section__heading-margin--large"
+>
+	<div class="grid  grid-4fr">
+		<EventCard client:load />
+
+	</div>
+	<div class="flex-centered">
+		<Button 
+			button={{
+				text:'See calendar',
+				href:'/calendar'
+			}}
+		/>
+	</div>
+</Section>
+
 
 	<Section
 	heading="Events coming up in 2023">
