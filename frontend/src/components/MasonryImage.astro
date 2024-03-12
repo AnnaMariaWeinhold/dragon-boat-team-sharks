@@ -1,0 +1,16 @@
+---
+const { src, alt } = Astro.props;
+---
+<div class="masonry__img">
+<img src={src} alt={ alt } data-swiper-slide loading="lazy"/>
+</div>
+
+<style>
+    
+    .masonry__img img {
+        object-fit: cover;
+        border: 2px solid var(--light-color);
+        border-radius: 2px;
+    }
+    
+    </style>

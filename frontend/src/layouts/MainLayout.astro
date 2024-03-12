@@ -12,7 +12,7 @@ export interface Props {
 	};
 }
 
-const { title, description, opengraph } = Astro.props;
+const { title, description, opengraph, layoutColorClass } = Astro.props;
 
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
@@ -60,7 +60,10 @@ import "../styles/styles.css";
 	<link rel="stylesheet" href="https://use.typekit.net/zht5nuw.css">
 </head>
 
-<div class="main-layout__grid">
+<div class={`
+main-layout__grid
+${layoutColorClass}
+`}>
 <body>
    <Navbar class="header"/>
     <main>

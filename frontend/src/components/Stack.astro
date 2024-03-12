@@ -12,12 +12,7 @@ const { img = "", heading, btn = "" } = Astro.props;
     </div>
     <div class="stack__text-container">
         <h2 class="stack__heading">{ heading }</h2>
-    <div class="stack__btn-container">
-        { btn &&
-        (<a class="stack__btn" href={ btn.href }>{ btn.text }</a> 
-        ) 
-        }
-    </div>    
+        <slot />  
 </div>
 </div>
 

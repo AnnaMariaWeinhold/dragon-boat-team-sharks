@@ -1,0 +1,35 @@
+---
+const { heading } = Astro.props;
+---
+
+<div class="masonry__heading-container">
+<h2 class="masonry__heading">{heading}</h2>
+</div>
+<div class="masonry__container">
+        <slot/>
+</div>
+
+<style>
+   
+   .masonry__heading-container{
+    max-width: 75em;
+    margin: 0 auto;
+   }
+    .masonry__heading {
+        margin-top: 2.8em;
+       
+    }
+.masonry__container {
+    display: flex;
+    gap: .6em;
+    flex-direction: column;
+    margin: 2em;
+}
+
+@media only screen and (min-width: 40em) {
+    .masonry__container {
+        flex-direction: row;
+    }
+    
+}
+</style>

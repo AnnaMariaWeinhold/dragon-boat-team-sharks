@@ -1,0 +1,115 @@
+---
+import HeroShot from "../components/HeroShot.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Quote from "../components/Quote.astro";
+import Wrapper from "../components/Wrapper.astro";
+import Grid from "../components/Grid.astro";
+import Section from "../components/Section.astro";
+import BackgroundImage from "../components/BackgroundImage.astro";
+import Lists from "../components/Lists.astro";
+import Image from "../components/Image.astro";
+import Button from "../components/Button.astro";
+import ImageGrid from "../components/ImageGrid.astro";
+import Stack from "../components/Stack.astro";
+import ProductCard from "../components/ProductCard.astro";
+import EventCard from "../components/EventCard.astro";
+import ImageAnimated from "../components/ImageAnimated.astro";
+
+
+// Fetch the posts order by date and pick latest 3 and expand all references to category
+export async function getStaticPaths() {
+  const camps = await createClient().fetch(`*[_type == "camp"]`);
+
+  return camps.map(({ name, date, location, from, to }) => {
+    return {
+      props: { name, date, location, from, to },
+    };
+  });
+}
+
+const { name, date, location, from, to } = Astro.props;
+---
+
+<MainLayout
+title="Sharks Homepage"
+description=""
+>
+<HeroShot
+img={{
+	src:'/images/training-camps.webp',
+	alt:''
+}}
+heading="Improve your technique in our training camps"
+subheading="Train with us"
+text=""
+btn={{
+	href:'/contact',
+	text:'Join our team'
+}}
+alignClass="heroshot__align--center"
+>
+<Button 
+	btn={{
+		href:'',
+		text:'Book your spot'
+	}}
+	alignClass="align--center"
+	/>
+</HeroShot>
+
+<Section 
+paddingClass="section__padding">
+<Wrapper>
+	<h6>Don't wait for summer to come</h6>
+<h2>Give your season a jump-start in Cyprus</h2>
+<Grid
+gridColumnClass="grid-5fr"
+>
+<p class="span-3">In Cyprus we paddle all year round. While it is still cold in your country, temperatures in Cyprus are rising. Enjoy dragon boating with like-minded people. We get you back on water earlier than you are used to with professional coaches and paddlers that are happy to share their experiences and technique. Register as a team, small group or individual.</p>
+<div class="start-row-2  start-col-1">
+	<h3>A full week</h3>
+	<Lists 
+	listItems={[
+		"Program?",
+		"Coaching Team?",
+	]}
+	/>
+</div>
+<div class="start-row-2  start-col-2">
+	<h3>3-day coaching</h3>
+	<Lists 
+	listItems={[
+		"Program?",
+		"Coaching Team?",
+	]}
+	/>
+</div>
+<div class="start-row-3">	
+	<Button 
+	btn={{
+		href:'',
+		text:'Get in touch'
+	}}
+	alignClass="align--left"
+	/>
+</div>
+</Grid>
+</Wrapper>
+</Section>
+
+<Section 
+heading="Our coaches make you smile and paddle like a shark"
+backgroundImgClass="background-img__scales">
+<Wrapper>
+<ImageGrid />
+<Button 
+btn={{
+	href:'/about',
+	text:'Get to know us'
+}}
+alignClass="align--right"
+/>
+</Wrapper>
+</Section>
+
+</MainLayout>

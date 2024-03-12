@@ -13,6 +13,22 @@ import ImageGrid from "../components/ImageGrid.astro";
 import Stack from "../components/Stack.astro";
 import ProductCard from "../components/ProductCard.astro";
 import EventCard from "../components/EventCard.astro";
+import ImageAnimated from "../components/ImageAnimated.astro";
+import {createClient} from '@sanity/client';
+
+
+// Fetch the posts order by date and pick latest 3 and expand all references to category
+export async function getStaticPaths() {
+  const events = await createClient().fetch(`*[_type == "event"]`);
+
+  return events.map(({ name, date, from, to }) => {
+    return {
+      props: { name, date, from, to },
+    };
+  });
+}
+
+const { name, date, from, to } = Astro.props;
 ---
 
 <MainLayout
@@ -25,13 +41,23 @@ img={{
 	alt:''
 }}
 heading="We build strength and perfect technique"
+subheading="Cyprus Sharks"
 text=""
 btn={{
 	href:'/contact',
 	text:'Join our team'
 }}
 alignClass="heroshot__align--center"
-/>
+>
+<Button 
+	btn={{
+		href:'',
+		text:'Join our training'
+	}}
+	alignClass="align--center"
+	/>
+</HeroShot>
+
 	<Section
 	paddingClass="section__padding">
 	<Wrapper>
@@ -39,6 +65,7 @@ alignClass="heroshot__align--center"
 	gridColumnClass="grid-2fr">
 <Quote 
 quote="We are the dragon boat team in Cyprus, you want to be part of. Smile like a shark or swim home."/>
+<ImageAnimated />
 <!-- 
 <BackgroundImage 
 backgroundImgClass="background-img__couple"
@@ -137,11 +164,15 @@ alignClass="align--center"
 		src:'/images/team.webp',
 		alt:'Team picture of the dragon boat team sharks'
 	}}
+	>
+	<Button 
 	btn={{
-		href:'',
-		text:'Contact us'
+	href:'/contact',
+	text:'Contact us'
 	}}
+	alignClass="align--left"
 	/>
+	</Stack>
 </Section>
 
 <Section
@@ -210,8 +241,8 @@ heading="Become a real shark">
 			gridColumnClass="grid-5fr">
 			<div>
 			<EventCard
-			date="Sunday Sept 3"
-			event="Marina Charity Event"
+			date={date}
+			event={name}
 			location="in Limassol"
 			eventImgClass="background-img__charity"
 			>

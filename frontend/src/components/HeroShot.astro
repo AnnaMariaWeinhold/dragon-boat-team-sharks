@@ -1,8 +1,11 @@
 ---
-const { img = "", heading, text, btn = "", phone = "", alignClass = "" } = Astro.props;
+const { img = "", heading, subheading, text, btn = "", phone = "", alignClass = "", gridClass = "" } = Astro.props;
 ---
 
-<div class="heroshot__container">
+<div class={`
+heroshot__container
+${gridClass}
+`}>
     <div class="heroshot__img-container">
     { img &&
     (
@@ -14,16 +17,11 @@ const { img = "", heading, text, btn = "", phone = "", alignClass = "" } = Astro
     heroshot__text-container
     ${alignClass}
     `}>
-        <h6 class="subheading">Cyprus Sharks</h6>
+        <h6 class="subheading">{subheading}</h6>
         <h1 class="heroshot__heading">{ heading }</h1>
         <p class="heroshot__text" set:html={ text }/>
         <p class="heroshot__phone">{ phone }</p>
-        <div class="heroshot__btn-container">
-            { btn &&
-            (<a class="heroshot__btn" href={ btn.href }>{ btn.text }</a> 
-            ) 
-            }
-        </div>    
+        <slot />  
     </div>
 </div>
 
@@ -59,12 +57,10 @@ const { img = "", heading, text, btn = "", phone = "", alignClass = "" } = Astro
     }
 
     .heroshot__phone {
-        background-image: linear-gradient(to right, var(--second-color), var(--third-color));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         font-size: var(--fs-600);
-        font-weight: 600;
+        font-weight: 700;
         text-align: center;
+        color: var(--light-color);
     }
 
     .heroshot__btn-container {
@@ -122,6 +118,10 @@ const { img = "", heading, text, btn = "", phone = "", alignClass = "" } = Astro
 
     .heroshot__container > * {
         grid-area: stack;
+    }
+
+    .heroshot__container--no-grid {
+        display: unset;
     }
 
     .heroshot__text-container {

@@ -14,6 +14,7 @@
     --fifth-color: #00a6e2;
     --sixth-color: #0074c7;
     --light-color: #fff;
+    --dark-color: #05000e;
 
     --ff-heading: 'GothamBlack', Arial, Helvetica, sans-serif;
     --ff-text: 'proxima-nova', sans-serif;
@@ -68,6 +69,7 @@ h6 {
     position: relative;
     z-index: 1;
     padding: 0 0.1em;
+    margin-bottom: 0.25em;
 }
 
 h6::after {
@@ -113,6 +115,10 @@ body {
     overflow-x: hidden;
 }
 
+.body--dark {
+    background-color: var(--dark-color);
+}
+
 img {
     max-width: 100%;
 }
@@ -130,6 +136,10 @@ img {
     "footer";
 }
 
+.layout--dark {
+    background-color: var(--dark-color);
+}
+
 .header {
     grid-area: header;
 }
@@ -140,6 +150,31 @@ img {
 
 .footer {
     grid-area: footer;
+}
+
+/* #MASONRY */
+
+.masonry__container {
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+}
+
+.masonry__column {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.masonry__img img {
+    object-fit: cover;
+}
+
+@media only screen and (min-width: 40em) {
+    .masonry__container {
+        flex-direction: row;
+    }
+    
 }
 
 /* #GENERAL CSS */

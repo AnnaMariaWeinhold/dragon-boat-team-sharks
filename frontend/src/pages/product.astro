@@ -1,0 +1,42 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroShot from "../components/HeroShot.astro";
+import Section from "../components/Section.astro";
+import Wrapper from "../components/Wrapper.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Grid from "../components/Grid.astro";
+import Button from "../components/Button.astro";
+---
+
+<MainLayout
+title="Shop"
+description="">
+<Section>
+	<Wrapper>
+        <!-- @ Here slider like we have in rainbowsend, just different styling (Anna) -->
+		<Grid
+		gridColumnClass="grid-2fr">
+		<ProductCard 
+		img={{
+			src:'/images/shirt-blue.jpeg',
+			alt:'Blue Shirt from Dragon Boat Team Sharks'
+		}}
+		title="Blue Shirt"
+		price="25€"
+		/>
+		<div>
+            <h2>Product Title</h2>
+            <p>Description</p>
+            <Button 
+		btn={{
+			href:'',
+			text:'Send request'
+		}}
+		alignClass="align--left"
+		/>
+        </div>
+		</Grid>
+	</Wrapper>
+	</Section>
+
+</MainLayout>

@@ -1,180 +1,498 @@
 ---
 import HeroShot from "../components/HeroShot.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import Gallery from "../components/Gallery.astro";
 import Section from "../components/Section.astro";
-import Wrapper from "../components/Wrapper.astro";
-import Grid from "../components/Grid.astro";
+import Lightbox from "../components/Lightbox.astro";
+import Masonry from "../components/Masonry.astro";
+import MasonryColumn from "../components/MasonryColumn.astro";
+import MasonryImage from "../components/MasonryImage.astro";
 ---
 
 <MainLayout
 title="About Cyprus Sharks"
 description=""
+layoutColorClass="body--dark"
 >
+<div class="body--dark">
 <HeroShot
 img={{
 	src:'/images/team-work.webp',
 	alt:''
 }}
-heading="We are passionate and stick together. Sharks love forever."
-text="Get to know us better. Come to our training sessions and live your best life."
+heading="We train, win and celebrate together"
+subheading="Get to know us"
+text=""
 alignClass="heroshot__align--center"
 />
-<Section>
-    <Wrapper>
-<p>Dragon Boat Team sharks was found....</p>
-<Grid
-gridColumnClass="grid-5fr">
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/simo-explain.webp',
-}}
-/>
-<Gallery
-sizeClass="small"
-img={{
-    src:'/images/simo-race-prep.webp',
-}}
-/>
-<Gallery
-sizeClass="small"
-img={{
-    src:'/images/simo-bbq.webp'
-}}
-/>
-<Gallery
-sizeClass="small"
-img={{
-    src:'/images/simo-watermelon.webp'
-}}
-/>
 
-</Grid>
-</Wrapper>
-</Section>
+<Lightbox />
 
 <Section>
-    <Wrapper>
-<p>We are a community...</p>
-<Grid
-gridColumnClass="grid-5fr">
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/nicole.webp',
-}}
-/>
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/birthday.webp',
-}}
-/>
-<Gallery
-sizeClass="small"
-img={{
-    src:'/images/giannis-grant.webp'
-}}
-/>
-<Gallery
-sizeClass="small"
-img={{
-    src:'/images/team-cheering.webp'
-}}
-/>
-<Gallery
-sizeClass="small"
-img={{
-    src:'/images/sharks-women.webp'
-}}
-/>
-<Gallery
-sizeClass="large"
-img={{
-    src:'/images/stella-tina.webp'
-}}
-/>
+        <Masonry
+        heading="Training in Paphos">
+
+          <!-- COLUMN #1 -->
+        <MasonryColumn>
+            <MasonryImage
+            src="/images/stella-training.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-11.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-09.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-04.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-02.webp"
+            alt=""
+            />
+        </MasonryColumn>
+        
+          <!-- COLUMN #2 -->
+            <MasonryColumn>
+                <MasonryImage
+                src="/images/paphos-training-03.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/paphos-training-12.webp"
+                alt=""
+                />
+          
+         
+           
+        
+        </MasonryColumn>
+
+          <!-- COLUMN #3 -->
+        <MasonryColumn>
+            <MasonryImage
+            src="/images/dragon-boat-women.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/team-work.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-10.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-01.webp"
+            alt=""
+            />
+        
+        </MasonryColumn>
+
+          <!-- COLUMN #4 -->
+        <MasonryColumn>
+            <MasonryImage
+            src="/images/giannis-grant.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/women-training.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/stella-tina.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-14.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-13.webp"
+            alt=""
+            />
+        </MasonryColumn>
+
+        <!-- COLUMN #5 -->
+        <MasonryColumn>
+            <MasonryImage
+            src="/images/paphos-training-05.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-06.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-07.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/paphos-training-15.webp"
+            alt=""
+            />
+        </MasonryColumn>
+        </Masonry>
+
+        <Masonry
+        heading="Training in Limassol">
+
+        <!-- COLUMN #1 -->
+        <MasonryColumn>
+            <MasonryImage
+            src="/images/training-16.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-01.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-09.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-17.webp"
+            alt=""
+            />
+        </MasonryColumn>
+        
+        <!-- COLUMN #2 -->
+            <MasonryColumn>
+                <MasonryImage
+                src="/images/training-18.webp"
+                alt=""
+                />
+            <MasonryImage
+            src="/images/training-02.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-19.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-05.webp"
+            alt=""
+            />
+            
+           
+        </MasonryColumn>
+
+        <!-- COLUMN #3 -->
+        <MasonryColumn>
+            <MasonryImage
+            src="/images/training-06.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-07.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-03.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-13.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-14.webp"
+            alt=""
+            />
+        </MasonryColumn>
+
+        <!-- COLUMN #4 -->
+        <MasonryColumn>
+            <MasonryImage
+            src="/images/training-08.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-10.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-20.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-15.webp"
+            alt=""
+            />
+        </MasonryColumn>
+
+        <!-- COLUMN #5 -->
+        <MasonryColumn>
+            <MasonryImage
+            src="/images/training-11.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-12.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/training-21.webp"
+            alt=""
+            />
+        </MasonryColumn>
+        </Masonry>
 
 
-</Grid>
-</Wrapper>
+        <Masonry
+        heading="Social Events">
+            <MasonryColumn>
+                <MasonryImage
+                src="/images/carry-boat.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/tent.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/beach-giannis.webp"
+                alt=""
+                />
+              
+            </MasonryColumn>
+
+            <MasonryColumn>
+                <MasonryImage
+                src="/images/birthday.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/beach.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/beach-flag.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/camping.webp"
+                alt=""
+                />
+            </MasonryColumn>
+
+            <MasonryColumn>
+                <MasonryImage
+                src="/images/nicole.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/simo-bbq.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/cake.webp"
+                alt=""
+                />
+            </MasonryColumn>
+
+            <MasonryColumn>
+                <MasonryImage
+                src="/images/simo-watermelon.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/beach-bbq.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/beach-pokal.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/group-laughing.webp"
+                alt=""
+                />
+            </MasonryColumn>
+            
+            <MasonryColumn>
+                <MasonryImage
+                src="/images/juliana.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/beach-all.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/group.webp"
+                alt=""
+                />
+            </MasonryColumn>
+        </Masonry>
+
+        <Masonry
+        heading="Competitions">
+        <MasonryColumn>
+            <MasonryImage
+            src="/images/race-start.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/simo-chant.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/race-mixed.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/race-cheer.webp"
+            alt=""
+            />
+            <MasonryImage
+            src="/images/getting-ready.webp"
+            alt=""
+            />
+        <MasonryImage
+        src="/images/men.webp"
+        alt=""
+        />
+        <MasonryImage
+        src="/images/go.webp"
+        alt=""
+        />
+      
+    </MasonryColumn>
+            <MasonryColumn>
+                    <MasonryImage
+                    src="/images/trikot.webp"
+                    alt=""
+                    />
+                    <MasonryImage
+                    src="/images/race-helm.webp"
+                    alt=""
+                    />
+                    <MasonryImage
+                    src="/images/race-men.webp"
+                    alt=""
+                    />
+                    <MasonryImage
+                    src="/images/queu.webp"
+                    alt=""
+                    />
+                    <MasonryImage
+                    src="/images/get-in-the-boat.webp"
+                    alt=""
+                    />
+                    <MasonryImage
+                    src="/images/women.webp"
+                    alt=""
+                    />
+                    <MasonryImage
+                    src="/images/pics.webp"
+                    alt=""
+                    />
+            </MasonryColumn>
+
+            <MasonryColumn>
+                <MasonryImage
+                src="/images/simo-explain.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/chill-boat.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/warming-up.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/dragon-boat-team-2k-race.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/boat-water.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/team-cheering.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/race-boats.webp"
+                alt=""
+                />
+            </MasonryColumn>
+
+            <MasonryColumn>
+                <MasonryImage
+                src="/images/check.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/helm.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/men-boat.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/simo-race-prep.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/end.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/finish.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/paddles-water.webp"
+                alt=""
+                />
+            </MasonryColumn>
+
+            <MasonryColumn>
+                <MasonryImage
+                src="/images/on-the-way-women.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/on-the-way.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/race-women.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/sharks-women.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/women-in-boat.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/boat.webp"
+                alt=""
+                />
+                <MasonryImage
+                src="/images/waiting.webp"
+                alt=""
+                />
+           
+            </MasonryColumn>
+        </Masonry>
 </Section>
-
-<Section>
-    <Wrapper>
-<p>We participate in national and international competitions. We train, have fun...</p>
-<Grid
-gridColumnClass="grid-6fr">
-
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/waiting.webp',
-}}
-/>
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/on-the-way.webp'
-}}
-/>
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/men-boat.webp'
-}}
-/>
-<Gallery
-sizeClass="large"
-img={{
-    src:'/images/on-the-way-women.webp',
-}}
-/>
-<Gallery
-sizeClass="large"
-img={{
-    src:'/images/chill-boat.webp'
-}}
-/>
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/helm.webp',
-}}
-/>
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/race-women.webp'
-}}
-/>
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/boat.webp'
-}}
-/>
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/warming-up.webp',
-}}
-/>
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/women-training.webp',
-}}
-/>
-<Gallery
-sizeClass="medium"
-img={{
-    src:'/images/stella-training.webp',
-}}
-/>
-</Grid>
-</Wrapper>
-</Section>
-
+</div>
 </MainLayout>

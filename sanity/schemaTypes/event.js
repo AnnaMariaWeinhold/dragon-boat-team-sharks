@@ -1,9 +1,11 @@
 import {defineField, defineType} from 'sanity'
+import {CalendarIcon} from '@sanity/icons'
 
 export default defineType({
     name: "event",
     title: "Event",
     type: "document",
+    icon: CalendarIcon,
     fields: [
         defineField({
             title: "Name",
@@ -16,6 +18,11 @@ export default defineType({
             name: "date",
             type: "date",
             validation: (Rule) => Rule.required()
+        }),
+        defineField({
+            title: "Location",
+            name: "location",
+            type: "string",
         }),
         defineField({
             title: "Start Time",

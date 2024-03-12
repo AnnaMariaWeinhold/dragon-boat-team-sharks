@@ -1,5 +1,5 @@
 ---
-const { date, event, location, eventImgClass } = Astro.props;
+const { date, event, location, eventImgClass, time } = Astro.props;
 ---
 
 <div class={`
@@ -8,6 +8,7 @@ ${eventImgClass}`}>
     <h3 class="event__date">{ date }</h3>
     <p class="event">{ event }</p>
     <p>{ location }</p>
+    <p>{ time }</p>
 </div>
 
 
