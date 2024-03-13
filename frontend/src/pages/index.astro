@@ -14,21 +14,6 @@ import Stack from "../components/Stack.astro";
 import ProductCard from "../components/ProductCard.astro";
 import EventCard from "../components/EventCard.astro";
 import ImageAnimated from "../components/ImageAnimated.astro";
-import {createClient} from '@sanity/client';
-
-
-// Fetch the posts order by date and pick latest 3 and expand all references to category
-export async function getStaticPaths() {
-  const events = await createClient().fetch(`*[_type == "event"]`);
-
-  return events.map(({ name, date, from, to }) => {
-    return {
-      props: { name, date, from, to },
-    };
-  });
-}
-
-const { name, date, from, to } = Astro.props;
 ---
 
 <MainLayout
@@ -220,7 +205,6 @@ heading="Become a real shark">
 	headingMarginClass="section__heading-margin--large"
 >
 	<div class="grid  grid-4fr">
-		<EventCard client:load />
 
 	</div>
 	<div class="flex-centered">
@@ -241,8 +225,8 @@ heading="Become a real shark">
 			gridColumnClass="grid-5fr">
 			<div>
 			<EventCard
-			date={date}
-			event={name}
+			date="BlaBlubb"
+			event="Fun Race"
 			location="in Limassol"
 			eventImgClass="background-img__charity"
 			>

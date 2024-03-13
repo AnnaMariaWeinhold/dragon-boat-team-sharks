@@ -16,7 +16,7 @@
     --light-color: #fff;
     --dark-color: #05000e;
 
-    --ff-heading: 'GothamBlack', Arial, Helvetica, sans-serif;
+    --ff-heading: 'Montserrat', Arial, Helvetica, sans-serif;
     --ff-text: 'proxima-nova', sans-serif;
     --ff-accent: 'marker-aid', sans-serif;
     --fs-xl: 4.4rem;
@@ -32,8 +32,8 @@
 /* #FONTS*/
 
 @font-face {
-    font-family: 'GothamBlack';
-    src: url(/fonts/GothamBlackRegular.ttf);
+    font-family: 'Montserrat';
+    src: url(/fonts/Montserrat-Black.ttf);
 }
 
 /* #TYPOGRAPHY*/

@@ -1,33 +1,12 @@
 ---
 import HeroShot from "../components/HeroShot.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import Quote from "../components/Quote.astro";
 import Wrapper from "../components/Wrapper.astro";
 import Grid from "../components/Grid.astro";
 import Section from "../components/Section.astro";
-import BackgroundImage from "../components/BackgroundImage.astro";
 import Lists from "../components/Lists.astro";
-import Image from "../components/Image.astro";
 import Button from "../components/Button.astro";
 import ImageGrid from "../components/ImageGrid.astro";
-import Stack from "../components/Stack.astro";
-import ProductCard from "../components/ProductCard.astro";
-import EventCard from "../components/EventCard.astro";
-import ImageAnimated from "../components/ImageAnimated.astro";
-
-
-// Fetch the posts order by date and pick latest 3 and expand all references to category
-export async function getStaticPaths() {
-  const camps = await createClient().fetch(`*[_type == "camp"]`);
-
-  return camps.map(({ name, date, location, from, to }) => {
-    return {
-      props: { name, date, location, from, to },
-    };
-  });
-}
-
-const { name, date, location, from, to } = Astro.props;
 ---
 
 <MainLayout
