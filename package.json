@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@sanity/client": "^6.15.3",
-    "@sanity/icons": "^2.11.2"
-  }
-}
