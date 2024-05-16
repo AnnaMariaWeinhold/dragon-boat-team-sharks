@@ -6,26 +6,49 @@ import Wrapper from "../components/Wrapper.astro";
 import ProductCard from "../components/ProductCard.astro";
 import Grid from "../components/Grid.astro";
 import Button from "../components/Button.astro";
+import Steps from "../components/Steps.astro";
 ---
 
 <MainLayout
 title="Shop"
-description="">
+description="Shop your sharks outfit and feel the strength and passion about dragon boating.">
 <HeroShot 
 img={{
 	src:'/images/models.webp',
 	alt:''
 }}
 subheading="Get your outfit"
-heading="Our online shop is coming soon"
-text="We are working hard on it. Promise. See our products below. If you wish to order, contact us please."
-btn={{
-	href:'/contact',
-	text:'Contact us'
-}}
-alignClass="heroshot__align--left"
+heading="Become a true shark fan or member"
+alignClass="heroshot__align--center"
 />
-<Section>
+<div class="body--dark">
+<Section
+paddingClass="section__padding--top">
+	<Wrapper>
+		<Grid
+		gridColumnClass="grid-4fr">
+	<Steps 
+		number="#01"
+		text="Choose your item"
+	/>
+	<Steps 
+		number="#02"
+		text="Select your size"
+	/>
+	<Steps 
+		number="#03"
+		text="Send your order"
+	/>
+	<Steps 
+		number="#04"
+		text="Receive payment details"
+	/>
+	</Grid>
+	</Wrapper>
+</Section>
+</div>
+<Section
+heading="Our products">
 	<Wrapper>
 		<Grid
 		gridColumnClass="grid-3fr">
@@ -36,6 +59,7 @@ alignClass="heroshot__align--left"
 		}}
 		title="Blue Shirt"
 		price="25€"
+		href="/blue-shirt"
 		/>
 		<ProductCard 
 		img={{

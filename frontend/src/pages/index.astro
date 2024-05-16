@@ -160,6 +160,7 @@ alignClass="align--center"
 	</Stack>
 </Section>
 
+<!-- @christian: here display of products -->
 <Section
 heading="Become a real shark">
 	<Wrapper>
@@ -192,7 +193,7 @@ heading="Become a real shark">
 		</Grid>
 		<Button 
 		btn={{
-			href:'',
+			href:'/shop',
 			text:'Go to our shop'
 		}}
 		alignClass="align--center"
@@ -200,67 +201,81 @@ heading="Become a real shark">
 	</Wrapper>
 	</Section>
 
+<!-- here event cards, I think a slider would be nice to click through them --> 
 	<Section
-	heading="Upcoming events"
-	headingMarginClass="section__heading-margin--large"
->
-	<div class="grid  grid-4fr">
-
-	</div>
-	<div class="flex-centered">
-		<Button 
-			button={{
-				text:'See calendar',
-				href:'/calendar'
-			}}
-		/>
-	</div>
-</Section>
-
-
-	<Section
-	heading="Events coming up in 2023">
+	backgroundImgClass="background-img__icons"
+	heading="Events">
 		<Wrapper>
 			<Grid
-			gridColumnClass="grid-5fr">
+			gridColumnClass="grid-4fr">
+				<div>
+					<EventCard
+					type="Race"
+					day="Sat"
+					date="Jun 1 - 2"
+					event="National Championship 200 m and 500 m"
+					location="in Limassol"
+					eventImgClass="background-col__race"
+					>
+				</div>
+				<div>
+					<EventCard
+					type="Race"
+					day="Thu-Sun"
+					date="Jul 4-7"
+					event="European Nations Championship"
+					location="Czech Republic"
+					eventImgClass="background-col__international"
+					>
+				</div>
 			<div>
+				<EventCard
+				type="Social"
+				day="Sun"
+				date="Jul 21"
+				event="Pool Party"
+				location="in Limassol"
+				eventImgClass="background-col__party"
+				>
+			</div>
+		<div>
 			<EventCard
-			date="BlaBlubb"
-			event="Fun Race"
-			location="in Limassol"
-			eventImgClass="background-img__charity"
+			type="Social"
+			day="Sat-Sun"
+			date="Aug 10-11"
+			event="Beach Camp"
+			location="Timi Beach"
+			eventImgClass="background-col__party"
 			>
 		</div>
 		<div>
 			<EventCard
-			date="Saturday Sept 30"
-			event="Fun Race"
-			location="in Limassol"
-			eventImgClass="background-img__party"
+			type="Social"
+			day="Sun"
+			date="Sept 22"
+			event="Coach's B-Day"
+			location="not decided"
+			eventImgClass="background-col__party"
 			>
 		</div>
 		<div>
 			<EventCard
-			date="Oct 7 - 8"
-			event="International Event"
-			location="in Limassol"
-			eventImgClass="background-img__international"
+			type="Social"
+			day="Sun"
+			date="Nov 17"
+			event="Hike or Paintball"
+			location="not decided"
+			eventImgClass="background-col__party"
 			>
 		</div>
 		<div>
 			<EventCard
-			date="Saturday Oct 14"
-			event="Corporate Event"
-			location="in Limassol"
-			eventImgClass="background-img__corporate"
-			>
-		</div>
-		<div>
-			<EventCard
-			date="Sunday Dec 3"
-			event="Mouflon's Fun Race Event"
-			location="in Limassol"
-			eventImgClass="background-img__fun-race"
+			type="Social"
+			day="Sun"
+			date="Dec 15"
+			event="Christmas Celebration"
+			location="not decided"
+			eventImgClass="background-col__party"
 			>
 		</div>
 			</Grid>

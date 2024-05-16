@@ -1,12 +1,15 @@
 ---
-const { heading = "", backgroundImgClass = "", paddingClass = "" } = Astro.props;
+const { heading = "", colorClass = "", backgroundImgClass = "", paddingClass = "" } = Astro.props;
 ---
 <div class={`
     background-img
     ${backgroundImgClass}
     ${paddingClass}
     `}>
-<section class="section">
+<section class={`
+section
+${colorClass}
+`}>
     <h2 class="section__heading">{ heading }</h2>
     <slot/>
 </section>
@@ -17,14 +20,22 @@ const { heading = "", backgroundImgClass = "", paddingClass = "" } = Astro.props
     }
 
     .section__padding {
-        padding: 2em;
         margin: -5.6em auto;
+    }
+
+    .section__padding--top {
+        padding: 0;
+        margin: -5.6em auto 0 auto;
     }
 
     .section__heading {
         text-align: left;
         max-width: 80%;
         margin: 0 auto 1em auto;
+    }
+
+    .section--dark {
+        background-color: var(--dark-color);
     }
 
     .background-img {
@@ -44,6 +55,13 @@ const { heading = "", backgroundImgClass = "", paddingClass = "" } = Astro.props
         background-size: 90%;
     }
 
+    .background-img__icons {
+        background-image: url(/images/icon-mix.svg);
+        background-position: center;
+        background-size: cover;
+        padding: 2em;
+    }
+
     @media only screen and (min-width: 40em) {
         .section {
         margin: 5.6em auto;
@@ -52,6 +70,12 @@ const { heading = "", backgroundImgClass = "", paddingClass = "" } = Astro.props
     .section__heading {
         margin-left: 2.8em;
         max-width: 50%;
+    }
+
+    
+    .section__padding--top {
+        padding: 1em 1em 0 1em;
+        margin: -5.6em auto 0 auto;
     }
 
     .section__padding {

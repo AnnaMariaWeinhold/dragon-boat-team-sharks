@@ -1,0 +1,414 @@
+---
+
+---
+
+<form class="form__container">
+    <div class="form__steps">
+    <h6>#01 Enter your details</h6>
+    </div>
+    <div class="form__grid">
+        <div class="form__details">
+            <label class="form__label" for="name">First name</label>
+            <input class="form__input" type="text" id="name" name="name" required>
+        </div>
+        <div class="form__details">
+            <label class="form__label" for="lastname">Last name</label>
+            <input class="form__input" type="text" id="lastname" name="lastname" required>
+        </div>
+    </div>
+<div class="form__details">
+    <label class="form__label" for="street">Street</label>
+    <input class="form__input" type="text" id="street" name="street" required>
+</div>
+<div class="form__grid">
+    <div class="form__details">
+        <label class="form__label" for="zip">Zip</label>
+        <input class="form__input" type="text" id="zip" name="zip" required>
+    </div>
+    <div class="form__details">
+        <label class="form__label" for="city">City</label>
+        <input class="form__input" type="text" id="city" name="city" required>
+    </div>
+</div>
+</div>
+<div class="form__details">
+    <label class="form__label" for="country">Country</label>
+    <input class="form__input" type="text" id="country" name="country" required>
+</div>
+<div class="form__details">
+    <label class="form__label" for="email">Email</label>
+    <input class="form__input" type="text" id="email" name="email" required>
+    <span class="form__note-container"><img alt="Smiling shark" src="/images/shark.svg" width="40"/>
+    <p class="form__note">Check your spelling</p></span>
+</div>
+<div class="form__details">
+    <label class="form__label" for="phone">Phone number</label>
+    <input class="form__input" type="text" id="phone" name="phone" required>
+    <span class="form__note-container"><img alt="Smiling shark" src="/images/shark.svg" width="40"/>
+    <p class="form__note">Add country code & double check your number</p></span>
+</div>
+
+<div class="form__steps">
+<h6>#02 Choose your items</h6>
+</div>
+<div class="form__products-grid">
+    <div>
+        <label class="form__product-container" for="product"><img class="form__img" src="/images/west-blue.jpeg" alt="" />
+            <input class="form__checkbox" type="checkbox" id="country" name="country" required>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    <div>
+        <label class="form__product-container" for="product"><img class="form__img" src="/images/shorts-blue.jpeg" alt="" />
+            <input class="form__checkbox" type="checkbox" id="country" name="country" required>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    <div>
+        <label class="form__product-container" for="product"><img class="form__img" src="/images/short-purple.jpeg" alt="" />
+            <input class="form__checkbox" type="checkbox" id="country" name="country" required>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    <div>
+        <label class="form__product-container" for="product"><img class="form__img" src="/images/shirt-pink.jpeg" alt="" />
+            <input class="form__checkbox" type="checkbox" id="country" name="country" required>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    <div>
+        <label class="form__product-container" for="product"><img class="form__img" src="/images/shirt-blue.jpeg" alt="" />
+            <input class="form__checkbox" type="checkbox" id="country" name="country" required>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    <div>
+        <label class="form__product-container" for="product"><img class="form__img" src="/images/hoody-blue.jpeg" alt="" />
+            <input class="form__checkbox" type="checkbox" id="country" name="country" required>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    <div>
+        <label class="form__product-container" for="product"><img class="form__img" src="/images/hoody-purple.jpeg" alt="" />
+            <input class="form__checkbox" type="checkbox" id="country" name="country" required>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+</div>
+
+<div class="form__steps">
+    <h6>#03 Select your size</h6>
+    </div>
+<div class="form__select">
+    <select name="selectedOption">
+        <option value="xs">XS</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+        <option value="xl">XL</option>
+    </select>
+    <span class="form__arrow"><i class="icofont-rounded-down"></i></span>
+</div>
+
+<div class="form__steps">
+<h6>#04 Anything else you want to tell us</h6>
+</div>
+    <label class="form__label" for="message">Your message</label>
+    <textarea class="form__input" id="message" name="message" ></textarea>
+    <p id="form-response"></p>
+
+    <input class="form__button" id="submit" type="submit" value="Submit">
+
+</form>
+<script>
+const form = document.querySelector("form");
+const submitButton = document.querySelector("#submit");
+const formResponse = document.querySelector("#form-response");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  submitButton.disabled = true;
+  const formData = new FormData(e.currentTarget);
+  fetch("/contact-form-handler/", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      formResponse.classList.remove(...formResponse.classList);
+      if (response.status === 201) {
+        formResponse.innerText = "We received your message. Thank you very much! We'll be in touch!";
+        formResponse.classList.add("success");
+        form.reset(); 
+      } else if (response.status === 400) {
+        formResponse.innerText = "Please tell us your email address.";
+        formResponse.classList.add("error");
+      } else if (response.status === 500 || response.status === 404) {
+        formResponse.innerText = "Something went wrong sending your registration...";
+        formResponse.classList.add("error");
+      }
+    })
+    .catch((response) => {
+      formResponse.innerText = "Something went wrong sending your registration...";
+      formResponse.classList.add("error");
+    })
+    .finally(() => {
+      submitButton.disabled = false;
+    });
+});
+</script>
+
+</div>
+
+<style is:inline>
+#form-response {
+    display: none;
+}
+#form-response.success,
+#form-response.error {
+    display: block;
+    color: white;
+    font-weight: bold;
+}
+</style>
+
+<style>
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0 auto;
+}
+
+.form__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+.form__products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.form__product-container {
+display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.form__steps {
+    display: flex;
+    margin-top: 3em;
+}
+
+.form__details {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.1em;
+}
+
+.form__note-container {
+    display: flex;
+    gap: 0.4em;
+    align-items: center;
+    margin-top: 0.4em;
+}
+
+.form__note {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+select {
+        font-size: 1rem;
+        padding: 0.6em 0.8em;
+        background: #fff;
+        color: var(--dark-color);
+        border: 0;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+    .form__arrow {
+        position: absolute;
+        top: 25%;
+        right: 0;
+        color: #fff;
+        pointer-events: none;
+        margin-right: 12px;
+    }
+
+    .form-select {
+        position: relative;
+    }
+
+
+input[type="checkbox"] {
+position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.8em;
+  width: 0.8em;
+  background-color: #fff;
+  border: 2px solid #fff;
+}
+
+.form__product-container:hover input[type="checkbox"] ~ .checkmark {
+  border: 2px solid var(--third-color);
+}
+
+.form__product-container input[type="checkbox"]:checked ~ .checkmark {
+  background-color: var(--third-color);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.form__product-container input[type="checkbox"]:checked ~ .checkmark:after {
+  display: block;
+}
+
+.form__product-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--second-color);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.form__products {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.form__img {
+    max-width: 120px;
+}
+
+.form__heading {
+    margin-bottom: 16px;
+}
+
+.form__text {
+    font-size: var(--fs-400);
+}
+
+.form__email {
+    color: var(--main-color);
+    font-size: 1.2rem;
+    margin-top: 1em;
+}
+
+.form__input {
+    padding: 0.6em 0.8em;
+    border: none;
+    font-family: var(--ff-text);
+    font-size: 1rem;
+    color: var(--dark-color);
+    font-weight: 300;
+    border-bottom: 2px solid transparent;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-bottom: 2px solid var(--third-color);
+}
+
+.form__label {
+    color: #fff;
+    font-family: var(--ff-heading);
+    font-size: 1.2rem;
+    margin: 0.4em 0;
+}
+
+textarea {
+    height: 200px;
+    margin-bottom: 1em;
+}
+
+.form__button {
+    display: flex;
+    padding: 0.6em 3em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.7s;
+    background-color: var(--third-color);
+    border: none;
+    outline: none;
+    text-align: center;
+    margin-left: auto;
+}
+
+.form__button:hover {
+        background: var(--fourth-color);
+    }
+
+.form__button:disabled {
+    cursor: not-allowed;
+}
+
+.form__button:hover {
+    box-shadow: inset 0 -4.25em 0 0 var(--hover-color);
+}
+
+@media only screen and (min-width: 45em) {
+    .form__container {
+    grid-template-columns: 1fr 1fr;
+}
+
+.form__grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+    .form__heading {
+    margin-top: auto;
+    }
+
+    .form__email {
+    font-size: 1.6rem;
+}
+}
+
+@media only screen and (min-width: 60em) {
+
+    .form__container {
+        margin: 2em;
+    }
+}
+
+@media only screen and (min-width: 80em) {
+
+    .form__container {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+</style>
