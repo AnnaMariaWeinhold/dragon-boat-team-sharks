@@ -24,7 +24,7 @@ ${gridAreaClass}
     .grid-5fr,
     .grid-6fr {
         grid-template-columns: 1fr;
-        gap: 1em;
+        gap: 4em;
     }
 
     .grid__gap--smaller {
@@ -32,6 +32,16 @@ ${gridAreaClass}
     }
 
     @media only screen and (min-width: 40em) {
+
+    .grid-2fr,
+    .grid-3fr,
+    .grid-4fr,
+    .grid-5fr,
+    .grid-6fr {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
         .grid-2fr {
             grid-template-columns: repeat(2, 1fr);
             gap: 2em;

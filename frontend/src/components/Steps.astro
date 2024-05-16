@@ -1,0 +1,22 @@
+---
+const { number, text } = Astro.props;
+---
+
+<div class="steps__container">
+    <h6>{number}</h6>
+    <h5>{text}</h5>
+</div>
+
+<style>
+    .steps__container {
+        text-align: center;
+    }
+
+    @media only screen and (min-width: 45em) {
+        .steps__container {
+        text-align: center;
+        max-width: 60%;
+        padding: 2em;
+    }
+    }
+</style>

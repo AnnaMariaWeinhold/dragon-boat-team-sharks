@@ -20,7 +20,7 @@
     --ff-text: 'proxima-nova', sans-serif;
     --ff-accent: 'marker-aid', sans-serif;
     --fs-xl: 4.4rem;
-    --fs-700: 3.2rem;
+    --fs-700: 3rem;
     --fs-600: 2.4rem;
     --fs-500: 2rem;
     --fs-400: 1.6rem;
@@ -51,12 +51,23 @@ h1 {
 h2 {
     font-size: var(--fs-600);
     color: #fff;
-    margin-bottom: 1em;
-    max-width: 60%;
+    margin-bottom: 0;
 }
 
 h3 {
     font-size: var(--fs-600);
+    color: #fff;
+    margin-bottom: 0.4em;
+}
+
+h4 {
+    font-size: var(--fs-500);
+    color: #fff;
+    margin-bottom: 0.4em;
+}
+
+h5 {
+    font-size: var(--fs-400);
     color: #fff;
     margin-bottom: 0.4em;
 }
@@ -89,7 +100,7 @@ p {
     font-size: var(--fs-300);
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 45em) {
     h1 {
         font-size: var(--fs-xl);
     }
@@ -97,7 +108,7 @@ p {
     h2 {
         font-size: var(--fs-700);
         color: #fff;
-        margin-bottom: 1em;
+        max-width: 60%;
     }
     
     h3 {

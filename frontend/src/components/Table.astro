@@ -1,54 +1,68 @@
 ---
-
+import Section from "./Section.astro"
 ---
-<div class="table__container">
-<table>
-    <thead>
-    <th></th>
-    <th>Wednesday</th>
-    <th>Thursday</th>
-    <th>Saturday</th>
-    <th>Sunday</th>
-</thead>
-<tbody>
-    <tr>
-        <td>Paphos</td>
-        <td>6am (winter & summer)</td>
-        <td>6pm (winter) <br> 6:30pm (summer)</td>
-        <td>3:30pm (winter & summer)</td>
-        <td class="align--center">-</td>
-    </tr>
-    <tr>
-        <td>Limassol</td>
-        <td>6:30pm (winter & summer)</td>
-        <td class="align--center">-</td>
-        <td>7:30am (winter & summer)</td>
-        <td>9:00am (winter & summer)</td>
-    </tr>
-</tbody>
-</table>
+
+<Section>
+    <h6 class="subheading">Train with us in Paphos</h6>
+<h2>Paphos</h2>
+<div class="training-grid">
+    <div>
+        <h3>WED</h3>
+        <p class="training__time">6:00am</p>
+    </div>
+    <div>
+        <h3>THU</h3>
+        <p  class="training__time">6:00pm</p>
+    </div>
+    <div>
+        <h3>SAT</h3>
+        <p class="training__time">4:00pm</p>
+    </div>
+    <p class="span-2">Depending on the weather, we train either at Mavrokolympus Dam or at Timi Beach.</p>
 </div>
 
+</Section>
+
+<Section>
+    <h6 class="subheading">Train with us in Limassol</h6>
+<h2>Limassol</h2>
+<div class="training-grid">
+    <div>
+        <h3>WED</h3>
+        <p class="training__time">6:30pm</p>
+    </div>
+    <div>
+        <h3>SAT</h3>
+        <p  class="training__time">7:30am</p>
+    </div>
+    <div>
+        <h3>SUN</h3>
+        <p class="training__time">9:00am</p>
+    </div>
+    <p class="span-2">Depending on the weather, we train either at Germasogia Dam or at Miami Beach.</p>
+</div>
+</Section>
+
+
 <style>
-    .table__container {
-        margin: 0 auto;
-        max-width: 900px;
-    }
-    table {
-        color:#fff;
-        border-collapse: collapse;
-    }
-
-    table, td, th {
-        border: 1px solid #fff;
+    .training-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 2em;
+        gap: 3em;
     }
 
-    th {
-        padding: 1.6em;
-        background-color: var(--fourth-color);
+    .training__time {
+        font-size: var(--fs-500);
+        margin-top: -0.4em;
     }
 
-    td {
-        padding: 1em 1.4em;
+
+    @media only screen and (min-width: 45em) {
+        .training-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
     }
 </style>

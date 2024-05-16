@@ -32,6 +32,7 @@ ${gridClass}
     .heroshot__container {
         display: grid;
         grid-template-columns: 1fr;
+        margin-top: 2em;
     }
 
     .heroshot__img {
@@ -40,8 +41,9 @@ ${gridClass}
     }
 
     .heroshot__text-container {
-        padding: 0 2em;
+        padding: 0 1.2em;
         max-width: 60em;
+        margin-bottom: 6em;
     }
 
     .heroshot__heading {
@@ -49,11 +51,10 @@ ${gridClass}
         color: #fff;
     }
 
-
     .heroshot__text {
         margin-bottom: 42px;
         font-size: var(--fs-400);
-        max-width: 60%;
+        max-width: 100%;
     }
 
     .heroshot__phone {
@@ -85,12 +86,13 @@ ${gridClass}
 
 
 
-  @media only screen and (min-width: 50em) {
+  @media only screen and (min-width: 45em) {
    
     .heroshot__align--left {
         display: flex;
         align-items: flex-start;
         margin-right: auto;
+        margin-left: 6em;
         text-align: left;
         max-width: 48%;
     }
@@ -128,6 +130,10 @@ ${gridClass}
         display: flex;
         flex-direction: column;
         margin-top: 1%;
+    }
+
+    .heroshot__text {
+        max-width: 60%;
     }
 }
 

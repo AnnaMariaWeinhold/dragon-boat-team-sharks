@@ -15,7 +15,6 @@
         max-width: 340px;
         position: relative;
         display: grid;
-        justify-items: center;  
         margin: 2em;
     }
     .fadein img {
@@ -56,5 +55,11 @@
 
 #f3 {
     -webkit-animation-delay: -4s;
+}
+
+@media only screen and (min-width: 45em) {
+    .image-animated__container {
+        justify-items: center;  
+    }
 }
 </style>

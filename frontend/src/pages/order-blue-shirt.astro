@@ -1,0 +1,26 @@
+---
+import HeroShot from "../components/HeroShot.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import FormShop from "../components/FormShop.astro"; 
+import Wrapper from "../components/Wrapper.astro";
+import Section from "../components/Section.astro";
+---
+
+<MainLayout
+title="Order your item"
+description=""
+
+>
+<HeroShot
+subheading="Fill out the form"
+heading="Order your item now"
+text="Type your details and size. We will get back to you with payment details."
+alignClass="heroshot__align--center"
+gridClass="heroshot__container--no-grid"
+/>
+<Section>
+<Wrapper>
+    <FormShop />
+</Wrapper>
+</Section>
+</MainLayout>
