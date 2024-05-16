@@ -2,7 +2,6 @@
 import Section from "./Section.astro"
 ---
 
-<Section>
     <h6 class="subheading">Train with us in Paphos</h6>
 <h2>Paphos</h2>
 <div class="training-grid">
@@ -21,9 +20,7 @@ import Section from "./Section.astro"
     <p class="span-2">Depending on the weather, we train either at Mavrokolympus Dam or at Timi Beach.</p>
 </div>
 
-</Section>
 
-<Section>
     <h6 class="subheading">Train with us in Limassol</h6>
 <h2>Limassol</h2>
 <div class="training-grid">
@@ -41,7 +38,7 @@ import Section from "./Section.astro"
     </div>
     <p class="span-2">Depending on the weather, we train either at Germasogia Dam or at Miami Beach.</p>
 </div>
-</Section>
+
 
 
 <style>
@@ -50,6 +47,7 @@ import Section from "./Section.astro"
         grid-template-columns: 1fr;
         border-bottom: 1px solid #fff;
         padding-bottom: 2em;
+        margin-top: 2em;
         gap: 3em;
     }
 
@@ -58,11 +56,16 @@ import Section from "./Section.astro"
         margin-top: -0.4em;
     }
 
+    .subheading {
+        margin-top: 4em;
+    }
+
 
     @media only screen and (min-width: 45em) {
         .training-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        margin-top: 0;
     }
     }
 </style>
