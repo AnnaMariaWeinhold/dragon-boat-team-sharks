@@ -5,7 +5,6 @@ import Quote from "../components/Quote.astro";
 import Wrapper from "../components/Wrapper.astro";
 import Grid from "../components/Grid.astro";
 import Section from "../components/Section.astro";
-import BackgroundImage from "../components/BackgroundImage.astro";
 import Lists from "../components/Lists.astro";
 import Image from "../components/Image.astro";
 import Button from "../components/Button.astro";
@@ -17,8 +16,8 @@ import ImageAnimated from "../components/ImageAnimated.astro";
 ---
 
 <MainLayout
-title="Sharks Homepage"
-description=""
+title="Cyprus Sharks"
+description="Cyprus Sharks are a dragon boat team with stable community. We have 50 paddlers who train three times a week in Limassol and Paphos. Join our team."
 >
 <HeroShot
 img={{
@@ -43,37 +42,30 @@ alignClass="heroshot__align--center"
 	/>
 </HeroShot>
 
-	<Section
-	paddingClass="section__padding">
 	<Wrapper>
 	<Grid
 	gridColumnClass="grid-2fr">
 <Quote 
 quote="We are the dragon boat team in Cyprus, you want to be part of. Smile like a shark or swim home."/>
 <ImageAnimated />
-<!-- 
-<BackgroundImage 
-backgroundImgClass="background-img__couple"
-/>
--->
 </Grid>
 </Wrapper>
-</Section>
-<Section>
+
+
 <Image 
 img={{
 	src:'/images/dragon-boat-women.webp',
 	alt:'Two women sitting on the front bench of a dragon boat'
 }}
 />
-</Section>
+
 
 <Section 
 backgroundImgClass="background-img__map"
-paddingClass="section__padding">
+paddingClass="section__padding"
+subheading="Don't waste your time"
+heading="Join our training sessions">
 <Wrapper>
-	<h6>Don't waste your time</h6>
-<h2>Join our training sessions</h2>
 <Grid
 gridColumnClass="grid-5fr"
 >
@@ -101,7 +93,7 @@ gridColumnClass="grid-5fr"
 <div class="start-row-3">	
 	<Button 
 	btn={{
-		href:'',
+		href:'/training',
 		text:'Get in touch'
 	}}
 	alignClass="align--left"
@@ -112,6 +104,7 @@ gridColumnClass="grid-5fr"
 </Section>
 <Section 
 heading="Our coaches make you smile and paddle like a shark"
+subheading="train hard, race easy"
 backgroundImgClass="background-img__scales">
 <Wrapper>
 <ImageGrid />
@@ -124,7 +117,7 @@ alignClass="align--right"
 />
 </Wrapper>
 </Section>
-<Section>
+
 <Image 
 img={{
 	src:'/images/dragon-boat-bubbles.svg',
@@ -132,17 +125,17 @@ img={{
 }}
 maxWidthClass="width--80"
 />
-</Section>
+
 
 <Button 
 btn={{
-	href:'',
+	href:'/contact',
 	text:'Join our team'
 }}
 alignClass="align--center"
 />
 
-<Section>
+
 	<Stack 
 	heading="We are waiting for you. If you don't try, you won't know."
 	img={{
@@ -158,10 +151,11 @@ alignClass="align--center"
 	alignClass="align--left"
 	/>
 	</Stack>
-</Section>
+
 
 <!-- @christian: here display of products -->
 <Section
+subheading="Get your outfit"
 heading="Become a real shark">
 	<Wrapper>
 		<Grid
@@ -173,6 +167,7 @@ heading="Become a real shark">
 		}}
 		title="Blue Shirt"
 		price="25€"
+		href="/blue-shirt"
 		/>
 		<ProductCard 
 		img={{
@@ -181,14 +176,16 @@ heading="Become a real shark">
 		}}
 		title="Purple Leggings"
 		price="28€"
+		href="/purple-leggings"
 		/>
 		<ProductCard 
 		img={{
 			src:'/images/hoody-blue.jpeg',
-			alt:'Blue Hoody from Dragon Boat Team Sharks'
+			alt:'Blue Hoodie from Dragon Boat Team Sharks'
 		}}
-		title="Blue Hoody"
+		title="Blue Hoodie"
 		price="35€"
+		href="/blue-hoodie"
 		/>
 		</Grid>
 		<Button 
@@ -204,7 +201,8 @@ heading="Become a real shark">
 <!-- here event cards, I think a slider would be nice to click through them --> 
 	<Section
 	backgroundImgClass="background-img__icons"
-	heading="Events">
+	heading="Events"
+	subheading="Have fun with us">
 		<Wrapper>
 			<Grid
 			gridColumnClass="grid-4fr">

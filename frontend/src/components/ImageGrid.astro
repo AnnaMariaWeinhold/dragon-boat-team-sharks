@@ -5,19 +5,19 @@
 <div class="img__grid">
     <div class="img__grid--first-item">
         <img class="img__item" src="/images/giannis.webp" />
-        <p>Giannis</p>
+        <p class="img__grid-title">Giannis</p>
     </div>
     <div class="img__grid--second-item">
         <img class="img__item" src="/images/sharen.webp" />
-        <p>Sharen</p>
+        <p class="img__grid-title">Sharen</p>
     </div>
     <div class="img__grid--third-item">
         <img class="img__item" src="/images/grant.webp" />
-        <p>Grant</p>
+        <p class="img__grid-title">Grant</p>
     </div>
     <div class="img__grid--fourth-item">
         <img class="img__item" src="/images/simo.webp" />
-        <p>Simo</p>
+        <p class="img__grid-title">Simo</p>
     </div>
 </div>
 
@@ -26,7 +26,6 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 2em;
-        padding: 2em;
     }
 
     .img__item {
@@ -35,11 +34,14 @@
         border-radius: 2px;
     }
 
-   
+    .img__grid-title {
+        font-weight: bold;
+    }
 
     @media only screen and (min-width: 40em) {
         .img__grid {
         grid-template-columns: repeat(4, 1fr);
+        margin-top: 2em;
     }
 
     .img__grid--first-item {

@@ -19,16 +19,21 @@ const { quote } = Astro.props;
 }
 
 .quote {
-    font-size: var(--fs-600);
+    font-size: var(--fs-500);
     color: #fff;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 45em) {
       
 .quote__background-img {
     background-size: 70%;
     padding: 12em 0;
     background-position: center left;
 }
+
+.quote {
+    font-size: var(--fs-600);
+}
+
 }
 </style>

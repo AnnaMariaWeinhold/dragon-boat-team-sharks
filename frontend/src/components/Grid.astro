@@ -24,7 +24,7 @@ ${gridAreaClass}
     .grid-5fr,
     .grid-6fr {
         grid-template-columns: 1fr;
-        gap: 4em;
+        gap: 1.4em;
     }
 
     .grid__gap--smaller {
@@ -42,7 +42,8 @@ ${gridAreaClass}
         gap: 1em;
     }
 
-        .grid-2fr {
+        .grid-2fr,
+        .grid-4fr {
             grid-template-columns: repeat(2, 1fr);
             gap: 2em;
         }
@@ -52,12 +53,13 @@ ${gridAreaClass}
         .grid-3fr {
             grid-template-columns: repeat(3, 1fr);
         }
-    }
 
-    @media only screen and (min-width: 80em) {
         .grid-4fr {
             grid-template-columns: repeat(4, 1fr);
         }
+    }
+
+    @media only screen and (min-width: 80em) {
 
         .grid-5fr {
             grid-template-columns: repeat(5, 1fr);

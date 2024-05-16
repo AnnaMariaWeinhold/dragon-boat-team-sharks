@@ -19,9 +19,15 @@ const { img, maxWidthClass = "" } = Astro.props;
             display: flex;
         }
 
-        @media only screen and (min-width: 40em) {
+        @media only screen and (min-width: 45em) {
             .width--80 {
                 max-width: 80%;
             }
+
+            .img {
+            margin: 0 auto;
+            display: flex;
+            padding: 3em 0 0 0;
+        }
         }
     </style>

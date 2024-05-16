@@ -4,18 +4,29 @@
 
 <div class="image-animated__container">
 <div class="fadein">
-    <img id="f3" src="/images/nicole-paddling.webp">
-    <img id="f2" src="/images/stella-paddling.webp">
-    <img id="f1" src="/images/tina-paddling.webp">
+    <img class="img-animated" id="f3" src="/images/nicole-paddling.webp">
+    <img class="img-animated" id="f2" src="/images/stella-paddling.webp">
+    <img class="img-animated" id="f1" src="/images/tina-paddling.webp">
 </div>
 </div>
 
 <style>
     .image-animated__container {
         max-width: 340px;
-        position: relative;
+        height: 240px;
         display: grid;
-        margin: 2em;
+        position: relative;
+    }
+
+    .fadein {
+        position: absolute;
+        top: -10em;
+        left:0;
+        padding: 2em;
+    }
+
+    .img-animated {
+        max-width: 200px;
     }
     .fadein img {
         border: 4px solid #fff;
@@ -60,6 +71,28 @@
 @media only screen and (min-width: 45em) {
     .image-animated__container {
         justify-items: center;  
+        margin: 2em;
+    }
+    
+    .img-animated {
+        max-width: 240px;
+    }
+
+    .fadein {
+        position: absolute;
+        top: 0;
+        left:0;
+        padding: 2em;
+    }
+}
+
+@media only screen and (min-width: 60em) {
+    
+    .fadein {
+        position: absolute;
+        top: 6em;
+        left:0;
+        padding: 2em;
     }
 }
 </style>
